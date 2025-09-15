@@ -6,9 +6,24 @@
     <title>m3u8</title>
 </head>
 <body>
-<video width="640" height="360" controls>
-  <source src="https://pannboxiaosa.github.io/m3u8/content.m3u8" type="application/vnd.apple.mpegurl">
+<video id='video' controls>
   您的浏览器不支持 HTML5 视频标签。
 </video>
+
+<script>
+        function loadVideo() {
+            const video = document.getElementById('video');
+
+            video.src = "https://pannboxiaosa.github.io/m3u8/content.m3u8";
+
+            video.addEventListener('loadedmetadata', function() {
+              video.play();});
+        }
+        
+        // 页面加载完成后自动加载示例视频
+        window.addEventListener('DOMContentLoaded', function() {
+            loadVideo();
+        });
+    </script>
 </body>
 </html>
